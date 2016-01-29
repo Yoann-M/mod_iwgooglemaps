@@ -16,7 +16,10 @@ $script .= 'scrollwheel: false,';
 $script .= 'mapTypeControl: false,';
 $script .= 'streetViewControl: false,';
 $script .= 'center: myLatlng,';
-$script .= 'mapTypeId: google.maps.MapTypeId.ROADMAP';
+$script .= 'mapTypeId: google.maps.MapTypeId.ROADMAP,';
+if ($mapcolor == 1) {
+$script .= 'styles: [{"stylers": [{ "saturation": -100 }]}],';
+};
 $script .= '};';
 // On créé la carte
 $script .= 'var myMap = new google.maps.Map(';
