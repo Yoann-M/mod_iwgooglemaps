@@ -54,6 +54,18 @@
                     description="Insérer ici la taille du zoom de la carte" 
                     filter="raw" />
 
+                <field
+                    name="mapcolor"
+                    type="list"
+                    default="O"
+                    label="Couleur de la carte"
+                    description="Choix de la couleur de la carte">
+                    <option
+                        value="0">Classic Map</option>
+                    <option
+                        value="1">Grey Map</option>
+                </field>
+
 
             </fieldset>
             <fieldset
