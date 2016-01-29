@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>IW Google Maps</name>
+    <author>Yoann M</author>
+    <version>1.0.0</version>
+    <description>Créé par indépendance Web !</description>
+    <files>
+        <filename>mod_iwgooglemaps.xml</filename>
+        <filename module="mod_iwgooglemaps">mod_iwgooglemaps.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>css/index.html</filename>
+        <filename>css/iwgooglemaps.css</filename>
+    </files>
+    <config>
+        <fields name="params">
+        	<fieldset 
+                name="basic" addfieldpath="/administrator/components/com_content/models/fields">
+            	
+                 <field 
+                    name="adresse" 
+                    type="text" default="" 
+                    label="Adresse" 
+                    description="Insérer ici l'adresse (ex: Palais de l'Elysée 55, rue du faubourg Saint-Honoré 75008  Paris )" 
+                    filter="raw" 
+                    class="span8 small"/>
+
+                <field 
+                    name="iconmap" 
+                    type="media" 
+                    directory="stories" 
+                    class="span8 small"/>
+
+                <field 
+                    name="windowtitle" 
+                    type="text" default="" 
+                    label="Titre de la fenetre" 
+                    description="Insérer ici (ex: Sarl Cool )" 
+                    filter="raw" />
+
+                <field 
+                    name="windowtel" 
+                    type="text" default="" 
+                    label="N° de Tel" 
+                    description="Insérer ici votre numéro de téléphone" 
+                    filter="raw" />
+
+                <field 
+                    name="zoomsize" 
+                    type="text" default="15" 
+                    label="Zoom" 
+                    description="Insérer ici la taille du zoom de la carte" 
+                    filter="raw" />
+
+
+            </fieldset>
+            <fieldset
+                name="advanced">
+
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="static">
+                    <option
+                        value="static"></option>
+                </field>
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>
