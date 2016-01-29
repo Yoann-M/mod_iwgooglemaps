@@ -37,5 +37,7 @@ if(is_numeric($zoomsize)){
 } else{
     $windowtel = "";
 }
+//Map Color
+$mapcolor = $params->get('mapcolor');
 require( JModuleHelper::getLayoutPath( 'mod_iwgooglemaps' ) );
 ?>
