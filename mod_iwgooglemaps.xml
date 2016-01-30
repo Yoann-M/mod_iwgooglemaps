@@ -14,6 +14,10 @@
         <filename>css/index.html</filename>
         <filename>css/iwgooglemaps.css</filename>
     </files>
+    <media folder="" destination="../images/IWGoogleMaps">
+        <filename>index.html</filename>
+        <folder>icon</folder>
+    </media>
     <config>
         <fields name="params">
         	<fieldset 
@@ -31,7 +35,7 @@
                     name="iconmap" 
                     type="media" 
                     directory="IWGoogleMaps"
-                    default="images/IWGoogleMaps/Arrow_1.png"
+                    default="images/IWGoogleMaps/icon/Arrow_1.png"
                     class="span8 small"/>
 
                 <field 
