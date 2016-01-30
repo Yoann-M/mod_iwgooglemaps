@@ -30,7 +30,7 @@
                 <field 
                     name="iconmap" 
                     type="media" 
-                    directory="stories" 
+                    directory="IWGoogleMaps" 
                     class="span8 small"/>
 
                 <field 
