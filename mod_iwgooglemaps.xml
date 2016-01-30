@@ -34,7 +34,7 @@
                 <field 
                     name="iconmap" 
                     type="media" 
-                    directory="IWGoogleMaps"
+                    directory="IWGoogleMaps/icon"
                     default="images/IWGoogleMaps/icon/Arrow_1.png"
                     class="span8 small"/>
 
