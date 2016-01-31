@@ -23,6 +23,14 @@
         	<fieldset 
                 name="basic" addfieldpath="/administrator/components/com_content/models/fields">
             	
+                  <field 
+                    name="apikey" 
+                    type="text" default="" 
+                    label="Google Map API KEY" 
+                    description="Insérer ici l'adresse (ex: Palais de l'Elysée 55, rue du faubourg Saint-Honoré 75008  Paris )" 
+                    filter="raw" 
+                    class="span8 small"/>
+
                  <field 
                     name="adresse" 
                     type="text" default="" 

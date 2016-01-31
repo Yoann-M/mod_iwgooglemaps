@@ -20,7 +20,7 @@ $adresse = str_replace("'" ,"\'",$adresse);
 // on defini le chemin vers l'image (icone) du marker
 $iconmap = $params->get('iconmap');
 $iconmap = JURI::root(true).'/'.$iconmap;
-// on verifie que zwindowtitle contient un apostrophe et on le remplace
+// on verifie que windowtitle contient un apostrophe et on le remplace
 $windowtitle = $params->get('windowtitle');
 $windowtitle = str_replace("'" ,"\'",$windowtitle); 
 //on verifie que zoomsize est bien un entier
@@ -39,5 +39,7 @@ if(is_numeric($zoomsize)){
 }
 //Map Color
 $mapcolor = $params->get('mapcolor');
+//Api Key
+$apikey = $params->get('apikey');
 require( JModuleHelper::getLayoutPath( 'mod_iwgooglemaps' ) );
 ?>

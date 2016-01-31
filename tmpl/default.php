@@ -2,9 +2,13 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 $document =& JFactory::getDocument();
 $document->addStyleSheet( JURI::root(true).'/modules/'.$module->module. '/css/iwgooglemaps.css');
+if (!empty($apikey)) {
+$document->addScript('https://maps.googleapis.com/maps/api/js?key='.$apikey.'&callback=initMap', 'text/javascript', true, true);
+} else {
 $document->addScript("http://maps.googleapis.com/maps/api/js?v=3&sensor=false&extension=.js");
+}
 echo $iwgooglemaps; 
-$script .= 'window.onload = function() {';
+$script .= 'function initMap() {';
 // Une variable pour contenir notre future marker
 $script .= 'var myMarker = null;';
 // Des coordonnées de départ
@@ -53,7 +57,7 @@ $script .= 'position: results[0].geometry.location,';
 $script .= 'map: myMap,';
 if ($iconmap) {$script .= 'icon: myMarkerImage,';}
 $script .= 'animation: google.maps.Animation.DROP,';
-$script .= 'title: "'.$windowtitle.'"';
+$script .= 'title: "'.$windowtitle.'",';
 $script .= '});';
 // Et on centre la vue sur ce marker
 $script .= 'myMap.setCenter(results[0].geometry.location);';
