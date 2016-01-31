@@ -12,8 +12,7 @@ class modIwGoogleMapsHelper
 {
 	public static function getIwGoogleMaps( $params )
 		{
-		$contenu .= '<div id="map-canvas"></div>';
-		echo $contenu;
+		echo '<div id="map-canvas"></div>';
 		}
 }
 ?>
