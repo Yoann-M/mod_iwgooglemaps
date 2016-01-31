@@ -3,20 +3,9 @@
 	height: 300px;
 	margin: 0;
 	}
-.gm-style-iw {
-	position: absolute; 
-	left: 12px; 
-	top: 9px; 
-	overflow: auto; 
-	width: 85px; 
-	height: 62px;
-	width:120px;
-	}
-.gm-style-cc a {
-	display:none;
+.gm-style-cc {
+opacity: 0;
 	}
 .gmnoprint {
 	margin-top:20px;
 	}
-.gm-style .gm-style-cc, .gm-style .gm-style-cc span, .gm-style .gm-style-cc a, .gm-style .gm-style-mtc div {
-}

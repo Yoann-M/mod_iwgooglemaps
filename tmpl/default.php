@@ -8,7 +8,11 @@ $document->addScript('https://maps.googleapis.com/maps/api/js?key='.$apikey.'&ca
 $document->addScript("http://maps.googleapis.com/maps/api/js?v=3&sensor=false&extension=.js");
 }
 echo $iwgooglemaps; 
+if (!empty($apikey)) {
 $script .= 'function initMap() {';
+} else {
+$script .= 'window.onload = function() {';
+}
 // Une variable pour contenir notre future marker
 $script .= 'var myMarker = null;';
 // Des coordonnées de départ
@@ -33,7 +37,7 @@ $script .= ');';
 // L'adresse que nous allons rechercher
 $script .= 'var GeocoderOptions = {';
 $script .= '\'address\' : \''.$adresse.'\',';
-$script .= '\'region\' : \'FR\'';
+$script .= '\'region\' : \''.$country.'\'';
 $script .= '}'."\n";
 // Notre fonction qui traitera le resultat
 $script .= 'function GeocodingResult( results , status )';
@@ -56,8 +60,8 @@ $script .= 'var myMarker = new google.maps.Marker({';
 $script .= 'position: results[0].geometry.location,';
 $script .= 'map: myMap,';
 if ($iconmap) {$script .= 'icon: myMarkerImage,';}
-$script .= 'animation: google.maps.Animation.DROP,';
-$script .= 'title: "'.$windowtitle.'",';
+if ($animationiconmap != "none") {$script .= 'animation: google.maps.Animation.'.$animationiconmap.',';}
+if (!empty($windowtitle)) {$script .= 'title: "'.$windowtitle.'"';}
 $script .= '});';
 // Et on centre la vue sur ce marker
 $script .= 'myMap.setCenter(results[0].geometry.location);';

@@ -17,9 +17,11 @@ $iwgooglemaps = modIwGoogleMapsHelper::getIwGoogleMaps( $params );
 // on verifie que adresse contient un apostrophe et on le remplace
 $adresse = $params->get('adresse'); 
 $adresse = str_replace("'" ,"\'",$adresse);
+$country = $params->get('country'); 
 // on defini le chemin vers l'image (icone) du marker
 $iconmap = $params->get('iconmap');
 $iconmap = JURI::root(true).'/'.$iconmap;
+$animationiconmap = $params->get('animationiconmap');
 // on verifie que windowtitle contient un apostrophe et on le remplace
 $windowtitle = $params->get('windowtitle');
 $windowtitle = str_replace("'" ,"\'",$windowtitle); 

@@ -23,21 +23,38 @@
         	<fieldset 
                 name="basic" addfieldpath="/administrator/components/com_content/models/fields">
             	
-                  <field 
-                    name="apikey" 
-                    type="text" default="" 
-                    label="Google Map API KEY" 
-                    description="Insérer ici l'adresse (ex: Palais de l'Elysée 55, rue du faubourg Saint-Honoré 75008  Paris )" 
-                    filter="raw" 
-                    class="span8 small"/>
+                <field 
+                    type="spacer"
+                    name="spacer2"
+                    class="text"
+                    label="&lt;b&gt;Localisation&lt;/b&gt; :"
+                    />
 
-                 <field 
+                <field 
                     name="adresse" 
-                    type="text" default="" 
+                    type="text" default="Place Du Capitole 31000 Toulouse" 
                     label="Adresse" 
                     description="Insérer ici l'adresse (ex: Palais de l'Elysée 55, rue du faubourg Saint-Honoré 75008  Paris )" 
                     filter="raw" 
-                    class="span8 small"/>
+                    class="span8 small"
+                    />
+                
+                 <field
+                    name="country"
+                    type="list"
+                    default="FR"
+                    label="Pays"
+                    description="Choix du pays de localisation">
+                    <option
+                        value="FR">France</option>
+                </field>
+
+                <field 
+                    type="spacer"
+                    name="spacer3"
+                    class="text"
+                    label="&lt;b&gt;Icone&lt;/b&gt; :"
+                    />
 
                 <field 
                     name="iconmap" 
@@ -45,6 +62,27 @@
                     directory="IWGoogleMaps/icon"
                     default="images/IWGoogleMaps/icon/Arrow_1.png"
                     class="span8 small"/>
+
+                 <field
+                    name="animationiconmap"
+                    type="list"
+                    default="DROP"
+                    label="Animation de l'icone"
+                    description="Choix de la couleur de la carte">
+                     <option
+                        value="none">Aucune</option>
+                    <option
+                        value="DROP">Chute</option>
+                    <option
+                        value="BOUNCE">Rebondi</option>
+                </field>
+
+                 <field 
+                    type="spacer"
+                    name="spacer4"
+                    class="text"
+                    label="&lt;b&gt;Popup&lt;/b&gt; :"
+                    />
 
                 <field 
                     name="windowtitle" 
@@ -61,11 +99,11 @@
                     filter="raw" />
 
                 <field 
-                    name="zoomsize" 
-                    type="text" default="15" 
-                    label="Zoom" 
-                    description="Insérer ici la taille du zoom de la carte" 
-                    filter="raw" />
+                    type="spacer"
+                    name="spacer5"
+                    class="text"
+                    label="&lt;b&gt;Paramètre de la carte&lt;/b&gt; :"
+                    />
 
                 <field
                     name="mapcolor"
@@ -78,6 +116,40 @@
                     <option
                         value="1">Grey Map</option>
                 </field>
+
+                <field 
+                    name="zoomsize" 
+                    type="text" default="15" 
+                    label="Zoom" 
+                    description="Insérer ici la taille du zoom de la carte" 
+                    filter="raw" />
+
+                <field 
+                    type="spacer"
+                    name="spacer1"
+                    class="text"
+                    label="&lt;b&gt;Google Map API KEY&lt;/b&gt; :"
+                    />
+
+                <field 
+                    name="apikey" 
+                    type="text" default="" 
+                    label="Google Map API KEY" 
+                    description="Insérer votre clef API Google Maps" 
+                    filter="raw" 
+                    class="span8 small"
+                    />
+
+                <field 
+                    name="note1" 
+                    type="note" 
+                    class="alert alert-info span10" 
+                    label="Une clé API, est ce obligatoire ?" 
+                    description="
+                     Non, mais il faut savoir que lorsque vous mettez votre carte en ligne, vous pouvez avoir besoin de contrôler si le nombre de visites sur la page ou se trouve votre carte ne dépasse pas le quota autorisé (15000/24H). Avec une clé API, vous pouvez également définir les domaines Web qui sont autorisés à accéder à vos cartes - cela va vous protéger contre toute utilisation non autorisée. Pour l'obtenir, visitez &lt;a href='https://developers.google.com/maps/documentation/javascript/get-api-key'target='blank'&gt;ce lien&lt;/a&gt;
+                     &lt;br/&gt;&lt;b&gt;Sachez que ce module vous permez de créer une carte sans renseigner de clé API.&lt;/b&gt;" />
+
+
 
 
             </fieldset>
